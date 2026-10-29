@@ -36,19 +36,43 @@ The system uses PostgreSQL to store information and provides REST API endpoints 
 
 ### A1: Database Tables and Relationships
 
-**1. Column Tables**
+**Column table 1**
 
-![Column table 1](screenshots/A1/Screenshot%20tablecolumn1-17.png)
+![Column table 1](screenshots/A1/Screenshot%20table_colum%201-17%20.png)
 
-![Column table 2](screenshots/A1/Screenshot%20tablecolumn17-25.png)
+**Column table 2**
 
-**2. Foreign Key Table**
+![Column table 2](screenshots/A1/Screenshot%20table%20column%2017-25.png)
 
-![Foreign key table](screenshots/A1/Screenshot%20aforeignkey.png)
+#### 2. Foreign Key Table
 
-**3. Join Table**
+![Foreign key table](screenshots/A1/Screenshot%20a%20foreign%20key.png)
 
-![Join table](screenshots/A1/Screenshot%20joinTable.png)
+#### 3. Join Table
+
+![Join table](screenshots/A1/Screenshot%20JoinTable.png)
+
+
+**Assignment table**
+
+![Assignment table](screenshots/A1/Screenshot%20Assigment.png)
+
+**Employer table**
+
+![Employer table](screenshots/A1/Screenshot%20Employer.png)
+
+
+**Room table**
+
+![Room table](screenshots/A1/Screenshot%20Room.png)
+
+**Skills table**
+
+![Skills table](screenshots/A1/Screenshot%20Skills.png)
+
+**Worker table**
+
+![Worker table](screenshots/A1/Screenshot%20Worker.png)
 
 ### A2: Postman API Testing
 
@@ -68,9 +92,9 @@ The system uses PostgreSQL to store information and provides REST API endpoints 
 
 ![Employer DELETE](screenshots/A2/Employer%20DELETE.png)
 
-**5. Employer Not Found — Error Response**
+**Employer Not Found**
 
-![Employer Not Found](screenshots/A2/Employer%20IdnotExit.png)
+![Employer Not Found](screenshots/A2/Employer%20Id%20not%20Exit.png)
 
 ## 7. Postman Collection
 
