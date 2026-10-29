@@ -34,6 +34,28 @@ The system uses PostgreSQL to store information and provides REST API endpoints 
 
 ## 6. Screenshots
 
+### A2: Postman API Testing
+
+**1. Employer POST — Create an Employer**
+
+![Employer POST](screenshots/A2/Empoyer%20POST.png)
+
+**2. Employer GET — Retrieve an Employer**
+
+![Employer GET](screenshots/A2/Employer%20GET.png)
+
+**3. Employer PUT — Update an Employer**
+
+![Employer PUT](screenshots/A2/Employer%20PUT.png)
+
+**4. Employer DELETE — Delete a Test Employer**
+
+![Employer DELETE](screenshots/A2/Employer%20DELETE.png)
+
+**Employer Not Found**
+
+![Employer Not Found](screenshots/A2/Employer%20Id%20not%20Exit.png)
+
 ### A1: Database Tables and Relationships
 
 **Column table 1**
@@ -74,27 +96,7 @@ The system uses PostgreSQL to store information and provides REST API endpoints 
 
 ![Worker table](screenshots/A1/Screenshot%20Worker.png)
 
-### A2: Postman API Testing
 
-**1. Employer POST — Create an Employer**
-
-![Employer POST](screenshots/A2/Employer%20POST.png)
-
-**2. Employer GET — Retrieve an Employer**
-
-![Employer GET](screenshots/A2/Employer%20GET.png)
-
-**3. Employer PUT — Update an Employer**
-
-![Employer PUT](screenshots/A2/Employer%20PUT.png)
-
-**4. Employer DELETE — Delete a Test Employer**
-
-![Employer DELETE](screenshots/A2/Employer%20DELETE.png)
-
-**Employer Not Found**
-
-![Employer Not Found](screenshots/A2/Employer%20Id%20not%20Exit.png)
 
 ## 7. Postman Collection
 
