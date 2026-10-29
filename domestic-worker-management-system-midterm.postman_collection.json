@@ -1,0 +1,340 @@
+{
+  "info": {
+    "_postman_id": "c9aec19f-2fc6-4feb-a067-cedae6e90a5d",
+    "name": "domestic-worker-management-system-midterm",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "58406618",
+    "_collection_link": "https://go.postman.co/collection/58406618-c9aec19f-2fc6-4feb-a067-cedae6e90a5d?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Save Skills",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Cooking Special\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/skills/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "skills",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "save worker",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"firstName\": \"Alice\",\r\n  \"lastName\": \"Ingabire\",\r\n  \"phone\": \"0786395416\",\r\n  \"room\": {\r\n    \"id\": \"996c9c6a-e305-4f41-9fe7-b8f3016495d3\"\r\n  },\r\n  \"skills\": [\r\n    {\r\n      \"id\": \"b7a8f3f6-a0bc-46d4-b631-51be47f4e7cb\"\r\n    }\r\n   \r\n  ]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/workers/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "workers",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Save Room",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"roomNumber\": 4,\r\n  \"name\": \"Room Four\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/rooms/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "rooms",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Save Assignment",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"startDate\": \"2026-11-20\",\r\n  \"duties\":\"Gardening\",\r\n  \"durationDays\": 6,\r\n  \"worker\": {\r\n    \"id\": \"51fa3bd1-812d-43cb-a7c9-fac9b2a18ed1\"\r\n  },\r\n  \"employer\": {\r\n    \"id\": \"5e556dee-e202-4e17-98b0-18325232729a\"\r\n  }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/assignments/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "assignments",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Save Employer",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"firstName\": \"David\",\r\n  \"lastName\": \"Habimana\",\r\n  \"nationalId\": \"1199080012345682\",\r\n  \"phone\": \"0788111005\",\r\n  \"address\": \"Rwamagana\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/employers/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "employers",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Read all Employer",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/employers/all",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "employers",
+            "all"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2 POST Employer",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"firstName\": \"Samuel\",\r\n  \"lastName\": \"Niyonzima\",\r\n  \"nationalId\": \"1199080012345599\",\r\n  \"phone\": \"0788123456\",\r\n  \"address\": \"Kigali, Rwanda\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/employers/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "employers",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2 GET Employer",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/employers/49c21273-1502-4a6f-a413-0785b36f9715",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "employers",
+            "49c21273-1502-4a6f-a413-0785b36f9715"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2 PUT Employer",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"firstName\": \"Samuel\",\r\n  \"lastName\": \"Niyonzima\",\r\n  \"nationalId\": \"1199080012345699\",\r\n  \"phone\": \"0788111222\",\r\n  \"address\": \"Kigali, Kicukiro\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/employers/update/49c21273-1502-4a6f-a413-0785b36f9715",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "employers",
+            "update",
+            "49c21273-1502-4a6f-a413-0785b36f9715"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2 DELETE Employer",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/employers/delete/49c21273-1502-4a6f-a413-0785b36f9715",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "employers",
+            "delete",
+            "49c21273-1502-4a6f-a413-0785b36f9715"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2 Employer Error Response",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/employers/49c21273-1502-4a6f-a413-0785b36f9710",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "employers",
+            "49c21273-1502-4a6f-a413-0785b36f9710"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
