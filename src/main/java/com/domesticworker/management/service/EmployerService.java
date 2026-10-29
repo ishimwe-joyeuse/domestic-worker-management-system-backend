@@ -8,6 +8,8 @@ import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.domesticworker.management.repository.WorkerRepository;
+
 import com.domesticworker.management.domain.Employer;
 import com.domesticworker.management.repository.EmployerRepository;
 
@@ -16,6 +18,13 @@ public class EmployerService {
 
     @Autowired
     private EmployerRepository employerRepository;
+
+    @Autowired
+private WorkerRepository workerRepository;
+
+public boolean workerExists(UUID workerId) {
+    return workerRepository.existsById(workerId);
+}
 
     // CREATE
     public Employer saveEmployer(Employer employer) {
@@ -61,4 +70,16 @@ public class EmployerService {
 
         return "The employer with that id does not exist";
     }
+
+    //B1
+
+    public List<Employer> findByLastName(String lastName) {
+    return employerRepository
+            .findByLastNameIgnoreCaseOrderByFirstNameAsc(lastName);
+}
+//C4
+
+public List<Employer> findEmployersByWorkerId(UUID workerId) {
+    return employerRepository.findEmployersByWorkerId(workerId);
+}
 }

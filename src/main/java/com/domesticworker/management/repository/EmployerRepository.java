@@ -26,5 +26,5 @@ public interface EmployerRepository extends JpaRepository<Employer, UUID> {
     // C4: JPQL — employers who have assignments with a particular worker
     @Query("SELECT DISTINCT a.employer FROM Assignment a " +
            "WHERE a.worker.id = :workerId")
-    List<Employer> findEmployersByWorkerId(@Param("workerId") UUID workerId);
+    List<Employer> findEmployersByWorkerId( UUID workerId);
 }

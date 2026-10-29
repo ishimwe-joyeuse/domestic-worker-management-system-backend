@@ -10,6 +10,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 import com.domesticworker.management.domain.Employer;
 import com.domesticworker.management.service.EmployerService;
 
@@ -34,6 +37,14 @@ public class EmployerController {
         return employerService.getAllEmployers();
     }
 
+    //B1
+
+    @GetMapping("/by-last-name")
+public List<Employer> findByLastName(
+        @RequestParam String lastName) {
+    return employerService.findByLastName(lastName);
+}
+
     // READ ONE
     @GetMapping("/{id}")
     public ResponseEntity<?> getEmployerById(@PathVariable UUID id) {
@@ -46,6 +57,20 @@ public class EmployerController {
                     .body("The employer with that id does not exist");
         }
     }
+
+    //C4
+    @GetMapping("/of-worker/{workerId}")
+public ResponseEntity<?> findEmployersOfWorker(
+        @PathVariable UUID workerId) {
+
+        if (!employerService.workerExists(workerId)) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                .body("The worker with that id does not exist");
+    }
+
+    return ResponseEntity.ok(
+            employerService.findEmployersByWorkerId(workerId));
+}
 
     // UPDATE
     @PutMapping("/update/{id}")

@@ -4,6 +4,7 @@ package com.domesticworker.management.service;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
+import java.time.LocalDate;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -70,4 +71,12 @@ public class AssignmentService {
         return assignmentRepository
                 .findByStatusOrderByStartDateAsc(status);
     }
+
+    //B3
+    public List<Assignment> findBetween(
+        LocalDate start, LocalDate end) {
+    return assignmentRepository
+            .findByStartDateBetweenOrderByStartDateAsc(start, end);
+}
+
 }

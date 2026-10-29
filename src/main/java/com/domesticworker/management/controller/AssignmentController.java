@@ -4,6 +4,7 @@ package com.domesticworker.management.controller;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
+import java.time.LocalDate;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -93,4 +94,16 @@ public class AssignmentController {
 
         return assignmentService.findByStatus(status);
     }
+
+    //B3
+    @GetMapping("/between")
+public List<Assignment> findBetween(
+        @RequestParam String start,
+        @RequestParam String end) {
+
+    LocalDate startDate = LocalDate.parse(start);
+    LocalDate endDate = LocalDate.parse(end);
+
+    return assignmentService.findBetween(startDate, endDate);
+}
 }

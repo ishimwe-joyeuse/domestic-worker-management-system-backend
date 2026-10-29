@@ -335,6 +335,204 @@
         }
       },
       "response": []
+    },
+    {
+      "name": "B1",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/employers/by-last-name?lastName=mukeshimana",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "employers",
+            "by-last-name"
+          ],
+          "query": [
+            {
+              "key": "lastName",
+              "value": "mukeshimana"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "B2",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/assignments/by-status?status=REQUESTED",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "assignments",
+            "by-status"
+          ],
+          "query": [
+            {
+              "key": "status",
+              "value": "REQUESTED"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "B3",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/assignments/between?start=2026-10-01&end=2026-10-31",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "assignments",
+            "between"
+          ],
+          "query": [
+            {
+              "key": "start",
+              "value": "2026-10-01"
+            },
+            {
+              "key": "end",
+              "value": "2026-10-31"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "C1",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/workers/by-skill?name=cook",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "workers",
+            "by-skill"
+          ],
+          "query": [
+            {
+              "key": "name",
+              "value": "cook"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "C2",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/rooms/free",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "rooms",
+            "free"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "C3",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/skills/unused",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "skills",
+            "unused"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "C4 Worker Id exit",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/employers/of-worker/328a4acb-4571-4075-9578-24f449e439f0",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "employers",
+            "of-worker",
+            "328a4acb-4571-4075-9578-24f449e439f0"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "C4 Worker Id not exit 404",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/employers/of-worker/328a4acb-4571-4075-9578-24f449e439f7",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "employers",
+            "of-worker",
+            "328a4acb-4571-4075-9578-24f449e439f7"
+          ]
+        }
+      },
+      "response": []
     }
   ]
 }
