@@ -17,6 +17,8 @@ public interface RoomRepository extends JpaRepository<Room, UUID> {
 
     Optional<Room> findByRoomNumber(int roomNumber);
 
+    
+
     @Query("""
         SELECT r FROM Room r
         WHERE NOT EXISTS (

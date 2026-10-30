@@ -10,6 +10,10 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 import com.domesticworker.management.domain.Assignment;
 import com.domesticworker.management.domain.AssignmentStatus;
@@ -37,21 +41,31 @@ public interface AssignmentRepository
     List<Object[]> countAssignmentsByStatus();
 
     // F2: Terminate assignments for a worker on a date,
-    // except assignments already FINISHED
-    @Modifying
-    @Query("UPDATE Assignment a SET a.status = " +
-           "com.domesticworker.management.domain.AssignmentStatus.TERMINATED " +
-           "WHERE a.worker.id = :workerId " +
-           "AND a.startDate = :date " +
-           "AND a.status <> " +
-           "com.domesticworker.management.domain.AssignmentStatus.FINISHED")
-    int terminateAssignmentsForWorkerOnDate(
-            @Param("workerId") UUID workerId,
-            @Param("date") LocalDate date);
+    
+// except assignments already FINISHED
+@Modifying
+@Transactional
+@Query("""
+    UPDATE Assignment a
+    SET a.status = :newStatus
+    WHERE a.worker.id = :workerId
+    AND a.startDate = :date
+    AND a.status <> :finishedStatus
+""")
+int cancelWorkerAssignments(
+        @Param("workerId") UUID workerId,
+        @Param("date") LocalDate date,
+        @Param("newStatus") AssignmentStatus newStatus,
+        @Param("finishedStatus") AssignmentStatus finishedStatus
+);
 
-    // Useful for checking assignments belonging to an employer
-    List<Assignment> findByEmployer_Id(UUID employerId);
+//Bonus 1
+// Bonus: Dashboard counts
+long countByStartDate(LocalDate startDate);
 
-    // Useful for finding assignments belonging to a worker
-    List<Assignment> findByWorker_Id(UUID workerId);
+long countByStatus(AssignmentStatus status);
+
+//Bonus 2
+
+Page<Assignment> findAll(Pageable pageable);
 }

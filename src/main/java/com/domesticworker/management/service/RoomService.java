@@ -27,6 +27,8 @@ public class RoomService {
         return roomRepository.findAll();
     }
 
+   
+
     // READ FREE ROOMS
     public List<Room> getFreeRooms() {
         return roomRepository.findFreeRooms();

@@ -533,6 +533,530 @@
         }
       },
       "response": []
+    },
+    {
+      "name": "D1 409 conflict assignment already has that date",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"startDate\": \"2026-11-05\",\r\n  \"duties\": \"Cleaning and cooking\",\r\n  \"durationDays\": 30,\r\n  \"status\": \"FINISHED\",\r\n  \"worker\": {\r\n    \"id\": \"328a4acb-4571-4075-9578-24f449e439f0\"\r\n  },\r\n  \"employer\": {\r\n    \"id\": \"5e556dee-e202-4e17-98b0-18325232729a\"\r\n  }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/assignments/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "assignments",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "D1 400 bad request assignment can not be past",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"startDate\": \"2026-09-05\",\r\n  \"duties\": \"Cleaning and cooking\",\r\n  \"durationDays\": 30,\r\n  \"status\": \"FINISHED\",\r\n  \"worker\": {\r\n    \"id\": \"328a4acb-4571-4075-9578-24f449e439f0\"\r\n  },\r\n  \"employer\": {\r\n    \"id\": \"5e556dee-e202-4e17-98b0-18325232729a\"\r\n  }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/assignments/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "assignments",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "D1 201 Asssignment created",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"startDate\": \"2026-12-05\",\r\n  \"duties\": \"Cleaning and cooking\",\r\n  \"durationDays\": 30,\r\n  \"status\": \"FINISHED\",\r\n  \"worker\": {\r\n    \"id\": \"328a4acb-4571-4075-9578-24f449e439f0\"\r\n  },\r\n  \"employer\": {\r\n    \"id\": \"5e556dee-e202-4e17-98b0-18325232729a\"\r\n  }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/assignments/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "assignments",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "D2 200 OK",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/assignments/09ff4ddc-6187-40c6-88e6-450c099ffb00/status?status=ASSIGNED",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "assignments",
+            "09ff4ddc-6187-40c6-88e6-450c099ffb00",
+            "status"
+          ],
+          "query": [
+            {
+              "key": "status",
+              "value": "ASSIGNED"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "D2 400 Bad request",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/assignments/09ff4ddc-6187-40c6-88e6-450c099ffb00/status?status=REQUESTED",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "assignments",
+            "09ff4ddc-6187-40c6-88e6-450c099ffb00",
+            "status"
+          ],
+          "query": [
+            {
+              "key": "status",
+              "value": "REQUESTED"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "D3 200 Skills added",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/workers/51fa3bd1-812d-43cb-a7c9-fac9b2a18ed1/skills/cf668fb5-b95c-4505-864b-ff00d5df3956",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "workers",
+            "51fa3bd1-812d-43cb-a7c9-fac9b2a18ed1",
+            "skills",
+            "cf668fb5-b95c-4505-864b-ff00d5df3956"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "D3 404 Worker with that id not exit",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/workers/71fa3bd1-812d-43cb-a7c9-fac9b2a18ed1/skills/cf668fb5-b95c-4505-864b-ff00d5df3956",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "workers",
+            "71fa3bd1-812d-43cb-a7c9-fac9b2a18ed1",
+            "skills",
+            "cf668fb5-b95c-4505-864b-ff00d5df3956"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "D3 Skills not exit",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/workers/51fa3bd1-812d-43cb-a7c9-fac9b2a18ed1/skills/cf668fb5-b95c-4505-864b-ff00d5df3950",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "workers",
+            "51fa3bd1-812d-43cb-a7c9-fac9b2a18ed1",
+            "skills",
+            "cf668fb5-b95c-4505-864b-ff00d5df3950"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "D4 Room changed success",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/workers/93da2de8-fec5-440b-a2df-52ef58b9fba8/room?roomNumber=4",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "workers",
+            "93da2de8-fec5-440b-a2df-52ef58b9fba8",
+            "room"
+          ],
+          "query": [
+            {
+              "key": "roomNumber",
+              "value": "4"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "D4 Check room in belong to another worker",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/workers/93da2de8-fec5-440b-a2df-52ef58b9fba8/room?roomNumber=2",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "workers",
+            "93da2de8-fec5-440b-a2df-52ef58b9fba8",
+            "room"
+          ],
+          "query": [
+            {
+              "key": "roomNumber",
+              "value": "2"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "D4 Worker you need to change room her Id not exit",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/workers/73da2de8-fec5-440b-a2df-52ef58b9fba8/room?roomNumber=4",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "workers",
+            "73da2de8-fec5-440b-a2df-52ef58b9fba8",
+            "room"
+          ],
+          "query": [
+            {
+              "key": "roomNumber",
+              "value": "4"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "D4 check room to change does not exit",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/workers/93da2de8-fec5-440b-a2df-52ef58b9fba8/room?roomNumber=9",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "workers",
+            "93da2de8-fec5-440b-a2df-52ef58b9fba8",
+            "room"
+          ],
+          "query": [
+            {
+              "key": "roomNumber",
+              "value": "9"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "E1 WorkReport success",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"taskName\": \"Taking care of children\",\r\n    \"comments\": \"All things are clear and profession\",\r\n    \"hoursWorked\": 7\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/work-reports/save?assignmentId=188b0e5d-a0c3-40ee-aab8-b64213b06bef",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "work-reports",
+            "save"
+          ],
+          "query": [
+            {
+              "key": "assignmentId",
+              "value": "188b0e5d-a0c3-40ee-aab8-b64213b06bef"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "E2",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/work-reports/employer/1199080012345678",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "work-reports",
+            "employer",
+            "1199080012345678"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "E3",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/work-reports/delete/893ca703-73f2-4147-9a57-a5c7f196b966",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "work-reports",
+            "delete",
+            "893ca703-73f2-4147-9a57-a5c7f196b966"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "F1",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/assignments/stats/by-status",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "assignments",
+            "stats",
+            "by-status"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "F2",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/assignments/cancel-day?workerId=51fa3bd1-812d-43cb-a7c9-fac9b2a18ed1&date=2026-10-20",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "assignments",
+            "cancel-day"
+          ],
+          "query": [
+            {
+              "key": "workerId",
+              "value": "51fa3bd1-812d-43cb-a7c9-fac9b2a18ed1"
+            },
+            {
+              "key": "date",
+              "value": "2026-10-20"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Bonus 1 summary",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/dashboard/summary",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "dashboard",
+            "summary"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Bonus 2 for page",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/assignments/page?page=0&size=5&sort=startDate,desc",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "assignments",
+            "page"
+          ],
+          "query": [
+            {
+              "key": "page",
+              "value": "0"
+            },
+            {
+              "key": "size",
+              "value": "5"
+            },
+            {
+              "key": "sort",
+              "value": "startDate,desc"
+            }
+          ]
+        }
+      },
+      "response": []
     }
   ]
 }
